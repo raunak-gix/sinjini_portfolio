@@ -17,8 +17,170 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Global Modal Launcher -->
+  <!-- Global Self-Contained Modal Launcher -->
   <script>
+    const cvHTML = `
+    <div class="resume-modal-content">
+      <!-- Top Tag & Header -->
+      <div class="cv-tag">CURRICULUM VITAE // OFFICIAL RESUME</div>
+      <h1 class="cv-name">SINJINI ROY</h1>
+      <div class="cv-subtitle">DATA ARCHITECT & BI ANALYST | COMPUTER SCIENCE ENGINEER</div>
+
+      <!-- Contact Bar -->
+      <div class="cv-contact-bar">
+        <span class="cv-contact-item">📍 Kolkata, India</span>
+        <span class="cv-contact-item">📞 +91 7278119888</span>
+        <span class="cv-contact-item">✉️ i.am.sinjini16@gmail.com</span>
+        <span class="cv-contact-item">🔗 <a href="https://linkedin.com/in/sinjini-roy" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+        <span class="cv-contact-item">🐙 <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="cv-section-title cv-title-green">PROFESSIONAL SUMMARY</div>
+      <p class="cv-text">
+        B.Tech graduate in Computer Science Engineering (2026) with a strong focus on Data Analytics and Business Intelligence. Skilled in Python, SQL, Excel, Power BI, data visualization, and statistical analysis, with hands-on experience in data cleaning, EDA, dashboard development, and extracting actionable insights from real-world datasets. Detail-oriented and analytical problem solver with strong communication skills and a passion for transforming data into meaningful business insights.
+      </p>
+
+      <!-- Technical Skills -->
+      <div class="cv-section-title cv-title-cyan">DESIGN & SOFTWARE SKILLS</div>
+      
+      <div style="margin-bottom: 8px; font-family: monospace; font-size: 0.76rem; color: #94a3b8;">LANGUAGES & CORE DATA</div>
+      <div class="cv-skills-group">
+        <span class="cv-pill pill-red">Python</span>
+        <span class="cv-pill pill-red">C</span>
+        <span class="cv-pill pill-cyan">SQL</span>
+        <span class="cv-pill pill-cyan">MySQL</span>
+        <span class="cv-pill pill-cyan">Pandas</span>
+        <span class="cv-pill pill-cyan">NumPy</span>
+        <span class="cv-pill pill-purple">Matplotlib</span>
+        <span class="cv-pill pill-purple">Seaborn</span>
+      </div>
+
+      <div style="margin-bottom: 8px; font-family: monospace; font-size: 0.76rem; color: #94a3b8; margin-top: 14px;">BI & ANALYTICS</div>
+      <div class="cv-skills-group">
+        <span class="cv-pill pill-green">Power BI</span>
+        <span class="cv-pill pill-green">MS Excel</span>
+        <span class="cv-pill pill-green">DAX</span>
+        <span class="cv-pill pill-green">Power Query</span>
+        <span class="cv-pill pill-purple">IBM Cognos</span>
+        <span class="cv-pill pill-cyan">Data Modeling</span>
+      </div>
+
+      <div style="margin-bottom: 8px; font-family: monospace; font-size: 0.76rem; color: #94a3b8; margin-top: 14px;">WEB, TOOLS & SOFT SKILLS</div>
+      <div class="cv-skills-group">
+        <span class="cv-pill pill-yellow">HTML</span>
+        <span class="cv-pill pill-yellow">CSS</span>
+        <span class="cv-pill pill-yellow">JavaScript</span>
+        <span class="cv-pill pill-red">VS Code</span>
+        <span class="cv-pill pill-red">PyCharm</span>
+        <span class="cv-pill pill-cyan">GitHub</span>
+        <span class="cv-pill pill-purple">Google Colab</span>
+        <span class="cv-pill pill-green">Communication</span>
+        <span class="cv-pill pill-green">Adaptability</span>
+        <span class="cv-pill pill-green">Teamwork</span>
+      </div>
+
+      <!-- Relevant Projects -->
+      <div class="cv-section-title cv-title-pink">RELEVANT PROJECTS</div>
+
+      <div class="cv-project-card">
+        <div class="cv-project-header">
+          <span class="cv-project-name">Hand Gesture Recognition to Speech System</span>
+          <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">View on GitHub</a>
+        </div>
+        <div class="cv-project-tech">Tech: Python, scikit-learn, MediaPipe, OpenCV, pandas, pyttsx3</div>
+        <ul class="cv-bullets">
+          <li>Developed a real-time computer vision system that detects and classifies hand gestures using MediaPipe hand landmarks and a Random Forest machine learning model.</li>
+          <li>Integrated text-to-speech functionality to convert recognized gestures into spoken output, enabling real-time gesture-based communication.</li>
+        </ul>
+      </div>
+
+      <div class="cv-project-card">
+        <div class="cv-project-header">
+          <span class="cv-project-name">Diwali Sales Data Analysis</span>
+          <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">View on GitHub</a>
+        </div>
+        <div class="cv-project-tech">Tech: Python, Pandas, NumPy, Matplotlib, Seaborn</div>
+        <ul class="cv-bullets">
+          <li>Cleaned, processed, and analyzed Diwali sales data to identify customer purchasing behavior, demographic patterns, product preferences, and sales trends.</li>
+          <li>Created detailed visualizations to identify high-performing states, customer segments, and product categories contributing significantly to overall revenue.</li>
+        </ul>
+      </div>
+
+      <div class="cv-project-card">
+        <div class="cv-project-header">
+          <span class="cv-project-name">Blinkit Sales Data Analysis</span>
+          <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">View on GitHub</a>
+        </div>
+        <div class="cv-project-tech">Tech: Python, Pandas, NumPy, Matplotlib, Seaborn</div>
+        <ul class="cv-bullets">
+          <li>Performed exploratory data analysis and preprocessing to evaluate product demand, outlet performance, customer preferences, and key business metrics.</li>
+          <li>Analyzed sales KPIs and developed visualizations to identify important sales patterns, product trends, and customer purchasing behavior.</li>
+        </ul>
+      </div>
+
+      <div class="cv-project-card">
+        <div class="cv-project-header">
+          <span class="cv-project-name">HR Analytics Dashboard</span>
+          <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">View on GitHub</a>
+        </div>
+        <div class="cv-project-tech">Tech: Power BI, DAX, Power Query, Data Modeling</div>
+        <ul class="cv-bullets">
+          <li>Built an interactive HR analytics dashboard analyzing employee demographics, attrition, retention, salary trends, and departmental KPIs across 1,470 employees.</li>
+          <li>Used DAX, Power Query, and data modeling to develop meaningful metrics and identify retention risks, employee tenure trends, and salary disparities.</li>
+        </ul>
+      </div>
+
+      <div class="cv-project-card">
+        <div class="cv-project-header">
+          <span class="cv-project-name">Automotive Sales & Service Analytics Dashboard</span>
+          <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">View on GitHub</a>
+        </div>
+        <div class="cv-project-tech">Tech: IBM Cognos Analytics, SQL, Data Modules</div>
+        <ul class="cv-bullets">
+          <li>Developed a two-page business intelligence dashboard combining dealership, sales, and service recall data to evaluate overall performance and post-sales service quality.</li>
+          <li>Analyzed $78.4M in profit across 58,118 units while visualizing sales trends, recall patterns, customer sentiment, and key performance indicators.</li>
+        </ul>
+      </div>
+
+      <!-- Certifications & Education Grid -->
+      <div class="cv-grid-2col">
+        <div>
+          <div class="cv-section-title cv-title-purple">CERTIFICATIONS</div>
+          <ul class="cv-list-styled">
+            <li><strong>IBM (Coursera):</strong> Data Visualization & Dashboards with Excel and Cognos (2026)</li>
+            <li><strong>IBM (Coursera):</strong> Excel Basics for Data Analysis (2026)</li>
+            <li><strong>IBM (Coursera):</strong> Introduction to Data Analytics (2026)</li>
+            <li><strong>Microsoft (Coursera):</strong> Python Programming Fundamentals (2025)</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cv-section-title cv-title-cyan">EDUCATION & ACHIEVEMENTS</div>
+          <div style="margin-bottom: 12px;">
+            <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem;">B.Tech in Computer Science & Engineering</div>
+            <div style="font-family: monospace; font-size: 0.82rem; color: #4ade80; margin-top: 2px;">CGPA: 8.02 | 2022–2026</div>
+            <div style="font-size: 0.82rem; color: #94a3b8;">Meghnad Saha Institute of Technology, MAKAUT – Kolkata</div>
+          </div>
+          
+          <div style="font-family: monospace; font-size: 0.78rem; color: #94a3b8; margin-top: 12px; margin-bottom: 6px;">KEY ACHIEVEMENTS</div>
+          <ul class="cv-list-styled">
+            <li>Member of Technical Club Megatronix – Paridhi 2026</li>
+            <li>Smart India Hackathon (SIH) Participant</li>
+            <li>SAP-organized College Hackathon Participant</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Action Bar -->
+      <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; gap: 16px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-primary" onclick="alert('Downloading Sinjini Roy Resume PDF...');">
+          Download PDF Resume
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="closeModal()">Close Window</button>
+      </div>
+    </div>`;
+
     function openResumeModal() {
       try {
         let overlay = document.getElementById('modal-overlay');
@@ -33,10 +195,8 @@
           body = document.getElementById('modal-body');
         }
 
-        if (body && typeof getResumeHTML === 'function') {
-          body.innerHTML = getResumeHTML();
-        } else if (body && typeof window.resumeHTMLString !== 'undefined') {
-          body.innerHTML = window.resumeHTMLString;
+        if (body) {
+          body.innerHTML = cvHTML;
         }
 
         overlay.classList.add('active');

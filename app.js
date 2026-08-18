@@ -592,104 +592,171 @@ LIMIT 5;</div>
 function openProjectModal(projectId) {
   let content = '';
 
-  if (projectId === 'financial') {
+  if (projectId === 'gesture-speech') {
     content = `
-      <div class="modal-header-tag">// DEPLOYMENT #01</div>
-      <h2 class="modal-title">Financial Forecasting Kernel</h2>
+      <div class="modal-header-tag">// PROJECT #01 // MACHINE LEARNING</div>
+      <h2 class="modal-title">Hand Gesture Recognition to Speech System</h2>
       <p style="color: var(--text-secondary); margin-bottom: 16px;">
-        High-precision time-series revenue prediction system built using Python and Meta Prophet, integrated into Snowflake data warehouse.
+        Real-time computer vision and machine learning system that detects hand landmarks using MediaPipe and classifies gestures with a Random Forest model, converting signs to speech output.
       </p>
 
       <div class="modal-metrics-row">
         <div class="metric-box">
-          <div class="metric-val">-14%</div>
-          <div class="metric-lbl">Variance Reduction</div>
+          <div class="metric-val">21 Points</div>
+          <div class="metric-lbl">MediaPipe Landmarks</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">$4.2M</div>
-          <div class="metric-lbl">CapEx Savings</div>
+          <div class="metric-val">Real-Time</div>
+          <div class="metric-lbl">Audio Output</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">98.8%</div>
-          <div class="metric-lbl">Confidence Score</div>
+          <div class="metric-val">Random Forest</div>
+          <div class="metric-lbl">Classifier Model</div>
         </div>
       </div>
 
-      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">Kernel Execution Script</h4>
-      <div class="modal-code-block">from prophet import Prophet
-import pandas as pd
+      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">Gesture Inference Pipeline</h4>
+      <div class="modal-code-block">import cv2
+import mediapipe as mp
+import pyttsx3
+from sklearn.ensemble import RandomForestClassifier
 
-df = pd.read_sql("SELECT transaction_date AS ds, total_revenue AS y FROM fin_warehouse", conn)
-model = Prophet(changepoint_prior_scale=0.05, seasonality_mode='multiplicative')
-model.fit(df)
-future = model.make_future_dataframe(periods=90)
-forecast = model.predict(future)</div>
+mp_hands = mp.solutions.hands.Hands(max_num_hands=1)
+engine = pyttsx3.init()
+
+# Extract landmark coordinates (x, y, z)
+landmarks = extract_hand_landmarks(frame)
+predicted_gesture = model.predict([landmarks])[0]
+engine.say(predicted_gesture)
+engine.runAndWait()</div>
     `;
-  } else if (projectId === 'user-behavior') {
+  } else if (projectId === 'diwali-sales') {
     content = `
-      <div class="modal-header-tag">// DEPLOYMENT #02</div>
-      <h2 class="modal-title">User Behavior & Clustering Dashboard</h2>
+      <div class="modal-header-tag">// PROJECT #02 // DATA ANALYTICS</div>
+      <h2 class="modal-title">Diwali Sales Data Analysis</h2>
       <p style="color: var(--text-secondary); margin-bottom: 16px;">
-        Unsupervised K-Means clustering model classifying 500,000+ active user cohorts to optimize marketing acquisition spend.
+        Exploratory data analysis on customer purchasing behavior during the Diwali festive season across demographic segments, product categories, and geographical states.
       </p>
 
       <div class="modal-metrics-row">
         <div class="metric-box">
-          <div class="metric-val">500k+</div>
-          <div class="metric-lbl">Users Segmented</div>
+          <div class="metric-val">10,000+</div>
+          <div class="metric-lbl">Transactions Analyzed</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">+22%</div>
-          <div class="metric-lbl">Campaign ROI</div>
+          <div class="metric-val">Demographic</div>
+          <div class="metric-lbl">Gender & Age Breakdown</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">4 Cohorts</div>
-          <div class="metric-lbl">Optimal K-Clusters</div>
+          <div class="metric-val">Top State</div>
+          <div class="metric-lbl">Revenue Mapping</div>
         </div>
       </div>
 
-      <h4 style="color: var(--purple-primary); margin-bottom: 8px;">RFM Segmentation Query</h4>
-      <div class="modal-code-block">WITH rfm_score AS (
-  SELECT user_id,
-    NTILE(4) OVER (ORDER BY max(order_date) DESC) AS recency_score,
-    NTILE(4) OVER (ORDER BY count(order_id) ASC) AS frequency_score,
-    NTILE(4) OVER (ORDER BY sum(amount) ASC) AS monetary_score
-  FROM transactions GROUP BY user_id
-)
-SELECT *, (recency_score + frequency_score + monetary_score) AS rfm_total 
-FROM rfm_score;</div>
+      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">Python Sales Aggregation Query</h4>
+      <div class="modal-code-block">import pandas as pd
+import seaborn as sns
+
+# Revenue breakdown by State and Occupation
+sales_df = pd.read_csv('Diwali_Sales_Data.csv', encoding='unicode_escape')
+sales_df.dropna(inplace=True)
+
+state_sales = sales_df.groupby(['State'], as_index=False)['Orders'].sum().sort_values(by='Orders', ascending=False)
+sns.barplot(x='State', y='Orders', data=state_sales.head(10))</div>
     `;
-  } else if (projectId === 'supply-chain') {
+  } else if (projectId === 'blinkit-sales') {
     content = `
-      <div class="modal-header-tag">// DEPLOYMENT #03</div>
-      <h2 class="modal-title">Real-Time Supply Chain Data Pipeline</h2>
+      <div class="modal-header-tag">// PROJECT #03 // E-COMMERCE ANALYTICS</div>
+      <h2 class="modal-title">Blinkit Sales Data Analysis</h2>
       <p style="color: var(--text-secondary); margin-bottom: 16px;">
-        Global inventory metrics ingestion pipeline built on Google BigQuery and dbt with streaming updates and sub-minute latency.
+        Sales KPI evaluation and item outlet analysis for quick-commerce platforms, optimizing inventory distribution and outlet performance metrics.
       </p>
 
       <div class="modal-metrics-row">
         <div class="metric-box">
-          <div class="metric-val">15 min</div>
-          <div class="metric-lbl">Reporting Latency</div>
+          <div class="metric-val">$1.2M</div>
+          <div class="metric-lbl">Total Sales Evaluated</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">1.2 TB</div>
-          <div class="metric-lbl">Daily Event Ingestion</div>
+          <div class="metric-val">8,523</div>
+          <div class="metric-lbl">Items Preprocessed</div>
         </div>
         <div class="metric-box">
-          <div class="metric-val">100%</div>
-          <div class="metric-lbl">dbt Test Pass Rate</div>
+          <div class="metric-val">Tier 1-3</div>
+          <div class="metric-lbl">Outlet Classification</div>
         </div>
       </div>
 
-      <h4 style="color: var(--green-primary); margin-bottom: 8px;">dbt Materialized View Model</h4>
-      <div class="modal-code-block">{{ config(materialized='materialized_view', partition_by={"field": "event_timestamp", "data_type": "timestamp"}) }}
+      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">Item Fat Content & Sales Analysis</h4>
+      <div class="modal-code-block"># KPI Calculation for Average Sales by Item Type
+item_sales = df.groupby('Item_Type')['Total_Sales'].agg(['sum', 'mean', 'count'])
+outlet_fat = df.groupby(['Outlet_Location_Type', 'Item_Fat_Content'])['Total_Sales'].sum().unstack()
+sns.heatmap(outlet_fat, annot=True, fmt='.0f', cmap='Oranges')</div>
+    `;
+  } else if (projectId === 'hr-analytics') {
+    content = `
+      <div class="modal-header-tag">// PROJECT #04 // POWER BI DASHBOARD</div>
+      <h2 class="modal-title">HR Analytics Attrition Dashboard</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">
+        Interactive Power BI report tracking attrition rates, salary bands, tenure metrics, and employee satisfaction scores across 1,470 workforce profiles.
+      </p>
 
-SELECT 
-  warehouse_id,
-  sku_code,
-  sum(stock_delta) OVER(PARTITION BY warehouse_id, sku_code ORDER BY event_timestamp) as live_stock
-FROM {{ ref('stg_inventory_events') }}</div>
+      <div class="modal-metrics-row">
+        <div class="metric-box">
+          <div class="metric-val">16.1%</div>
+          <div class="metric-lbl">Attrition Benchmark</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">1,470</div>
+          <div class="metric-lbl">Employees Tracked</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">DAX</div>
+          <div class="metric-lbl">Dynamic Measures</div>
+        </div>
+      </div>
+
+      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">DAX Measure Formula</h4>
+      <div class="modal-code-block">Attrition Rate = 
+DIVIDE(
+    CALCULATE(COUNT(HR_Data[Emp_ID]), HR_Data[Attrition] = "Yes"),
+    COUNT(HR_Data[Emp_ID]),
+    0
+)</div>
+    `;
+  } else if (projectId === 'automotive-service') {
+    content = `
+      <div class="modal-header-tag">// PROJECT #05 // IBM COGNOS DASHBOARD</div>
+      <h2 class="modal-title">Automotive Sales & Service Analytics Dashboard</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">
+        Two-page executive dashboard combining dealership sales metrics with post-sales service recall data to optimize vehicle reliability and profit margins.
+      </p>
+
+      <div class="modal-metrics-row">
+        <div class="metric-box">
+          <div class="metric-val">$78.4M</div>
+          <div class="metric-lbl">Gross Profit Analyzed</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">58,118</div>
+          <div class="metric-lbl">Units Sold</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">Cognos</div>
+          <div class="metric-lbl">IBM BI Suite</div>
+        </div>
+      </div>
+
+      <h4 style="color: var(--cyan-primary); margin-bottom: 8px;">Data Module SQL Aggregation</h4>
+      <div class="modal-code-block">SELECT 
+  d.dealership_region,
+  s.model_name,
+  SUM(s.sale_price - s.cost_price) as gross_profit,
+  COUNT(DISTINCT r.recall_id) as recall_count
+FROM sales_fact s
+JOIN dealership_dim d ON s.dealer_id = d.dealer_id
+LEFT JOIN recall_fact r ON s.vin = r.vin
+GROUP BY 1, 2;</div>
     `;
   }
 

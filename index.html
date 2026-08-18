@@ -590,66 +590,138 @@
         </div>
 
         <div class="deployments-grid">
-          <!-- Card 1 -->
-          <div class="project-card" data-project="financial">
+          <!-- Project Card 1: Hand Gesture Recognition -->
+          <div class="project-card" data-project="gesture-speech">
             <div class="project-img-container">
-              <img src="assets/chart_financial.jpg" alt="Financial Forecasting Graphic" class="project-img">
+              <img src="assets/chart_user_behavior.jpg" alt="Hand Gesture Recognition System" class="project-img">
               <div class="project-img-overlay overlay-cyan"></div>
             </div>
             <div class="project-content">
               <div class="project-tags">
                 <span class="tag">Python</span>
-                <span class="tag">Prophet</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">MediaPipe</span>
               </div>
-              <h3 class="project-title">Financial Forecasting</h3>
+              <h3 class="project-title">Hand Gesture Recognition to Speech System</h3>
               <p class="project-desc">
-                Engineered a time-series forecasting model that reduced quarterly revenue variance by 14%, utilizing historical transactional data and market indicators.
+                Developed a real-time computer vision system classifying hand gestures with MediaPipe landmarks and a Random Forest ML model, integrated with text-to-speech output.
               </p>
-              <button class="project-link btn-link-cyan" onclick="openProjectModal('financial')">
-                VIEW KERNEL <i data-lucide="arrow-right"></i>
-              </button>
+              <div style="display: flex; gap: 12px; align-items: center; margin-top: 12px;">
+                <button type="button" class="project-link btn-link-cyan" onclick="openProjectModal('gesture-speech')">
+                  VIEW DETAILS <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="project-card" data-project="user-behavior">
+          <!-- Project Card 2: Diwali Sales Data Analysis -->
+          <div class="project-card" data-project="diwali-sales">
             <div class="project-img-container">
-              <img src="assets/chart_user_behavior.jpg" alt="User Behavior Analysis Graphic" class="project-img">
+              <img src="assets/chart_financial.jpg" alt="Diwali Sales Data Analysis" class="project-img">
               <div class="project-img-overlay overlay-purple"></div>
             </div>
             <div class="project-content">
               <div class="project-tags">
-                <span class="tag">SQL</span>
-                <span class="tag">Tableau</span>
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Matplotlib</span>
               </div>
-              <h3 class="project-title">User Behavior Analysis</h3>
+              <h3 class="project-title">Diwali Sales Data Analysis</h3>
               <p class="project-desc">
-                Segmented 500k+ active users using K-Means clustering, identifying a high-LTV segment that drove a 22% increase in targeted campaign ROI.
+                Cleaned, processed, and analyzed Diwali sales data to evaluate customer purchasing behavior, demographic trends, and high-performing product revenue categories.
               </p>
-              <button class="project-link btn-link-purple" onclick="openProjectModal('user-behavior')">
-                VIEW DASHBOARD <i data-lucide="arrow-right"></i>
-              </button>
+              <div style="display: flex; gap: 12px; align-items: center; margin-top: 12px;">
+                <button type="button" class="project-link btn-link-purple" onclick="openProjectModal('diwali-sales')">
+                  VIEW DETAILS <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="project-card" data-project="supply-chain">
+          <!-- Project Card 3: Blinkit Sales Data Analysis -->
+          <div class="project-card" data-project="blinkit-sales">
             <div class="project-img-container">
-              <img src="assets/chart_supply_chain.jpg" alt="Supply Chain Optimization Graphic" class="project-img">
+              <img src="assets/chart_supply_chain.jpg" alt="Blinkit Sales Analytics" class="project-img">
               <div class="project-img-overlay overlay-green"></div>
             </div>
             <div class="project-content">
               <div class="project-tags">
-                <span class="tag">BigQuery</span>
-                <span class="tag">dbt</span>
+                <span class="tag">Python</span>
+                <span class="tag">EDA</span>
+                <span class="tag">Seaborn</span>
               </div>
-              <h3 class="project-title">Supply Chain Optimization</h3>
+              <h3 class="project-title">Blinkit Sales Data Analysis</h3>
               <p class="project-desc">
-                Architected a real-time data pipeline consolidating global inventory metrics, reducing reporting latency from 24 hours to 15 minutes.
+                Performed exploratory data analysis and preprocessing to evaluate product demand, outlet performance, customer preferences, and key retail sales KPIs.
               </p>
-              <button class="project-link btn-link-green" onclick="openProjectModal('supply-chain')">
-                VIEW REPORT <i data-lucide="arrow-right"></i>
-              </button>
+              <div style="display: flex; gap: 12px; align-items: center; margin-top: 12px;">
+                <button type="button" class="project-link btn-link-green" onclick="openProjectModal('blinkit-sales')">
+                  VIEW DETAILS <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4: HR Analytics Dashboard -->
+          <div class="project-card" data-project="hr-analytics">
+            <div class="project-img-container">
+              <img src="assets/chart_user_behavior.jpg" alt="HR Analytics Dashboard" class="project-img">
+              <div class="project-img-overlay overlay-cyan"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Power BI</span>
+                <span class="tag">DAX</span>
+                <span class="tag">Power Query</span>
+              </div>
+              <h3 class="project-title">HR Analytics Dashboard</h3>
+              <p class="project-desc">
+                Built an interactive HR dashboard analyzing employee demographics, attrition risk, retention trends, and departmental metrics across 1,470 employees.
+              </p>
+              <div style="display: flex; gap: 12px; align-items: center; margin-top: 12px;">
+                <button type="button" class="project-link btn-link-cyan" onclick="openProjectModal('hr-analytics')">
+                  VIEW DASHBOARD <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 5: Automotive Sales & Service Analytics -->
+          <div class="project-card" data-project="automotive-service">
+            <div class="project-img-container">
+              <img src="assets/chart_financial.jpg" alt="Automotive Analytics Dashboard" class="project-img">
+              <div class="project-img-overlay overlay-purple"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">IBM Cognos</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Data Modules</span>
+              </div>
+              <h3 class="project-title">Automotive Sales & Service Analytics</h3>
+              <p class="project-desc">
+                Developed a 2-page BI dashboard combining dealership, sales, and service recall data, analyzing $78.4M profit across 58,118 units to optimize post-sales service.
+              </p>
+              <div style="display: flex; gap: 12px; align-items: center; margin-top: 12px;">
+                <button type="button" class="project-link btn-link-purple" onclick="openProjectModal('automotive-service')">
+                  VIEW DASHBOARD <i data-lucide="arrow-right"></i>
+                </button>
+                <a href="https://github.com/SINjini16" target="_blank" rel="noopener noreferrer" class="cv-project-github">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
         </div>

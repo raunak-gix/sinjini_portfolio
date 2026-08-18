@@ -81,7 +81,7 @@ function initParticleCanvas() {
       if (x === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
-    ctx.strokeStyle = 'rgba(192, 132, 252, 0.22)';
+    ctx.strokeStyle = 'rgba(251, 146, 60, 0.22)';
     ctx.stroke();
 
     // B. Speeding Grid Laser Beams
@@ -89,7 +89,7 @@ function initParticleCanvas() {
       ctx.beginPath();
       if (b.dir === 'horizontal') {
         const grad = ctx.createLinearGradient(b.x, b.y, b.x - b.len, b.y);
-        grad.addColorStop(0, `rgba(75, 240, 226, ${b.alpha})`);
+        grad.addColorStop(0, `rgba(249, 115, 22, ${b.alpha})`);
         grad.addColorStop(1, 'transparent');
         ctx.strokeStyle = grad;
         ctx.lineWidth = b.size;
@@ -104,7 +104,7 @@ function initParticleCanvas() {
         }
       } else {
         const grad = ctx.createLinearGradient(b.x, b.y, b.x, b.y - b.len);
-        grad.addColorStop(0, `rgba(192, 132, 252, ${b.alpha})`);
+        grad.addColorStop(0, `rgba(251, 146, 60, ${b.alpha})`);
         grad.addColorStop(1, 'transparent');
         ctx.strokeStyle = grad;
         ctx.lineWidth = b.size;
@@ -142,7 +142,7 @@ function initParticleCanvas() {
           ctx.beginPath();
           ctx.moveTo(n1.x, n1.y);
           ctx.lineTo(n2.x, n2.y);
-          ctx.strokeStyle = `rgba(75, 240, 226, ${0.18 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(249, 115, 22, ${0.18 * (1 - dist / 120)})`;
           ctx.lineWidth = 0.6;
           ctx.stroke();
         }
@@ -152,9 +152,9 @@ function initParticleCanvas() {
       const currentRadius = n1.size + Math.sin(n1.pulse) * 0.7;
       ctx.beginPath();
       ctx.arc(n1.x, n1.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(75, 240, 226, 0.8)';
+      ctx.fillStyle = 'rgba(249, 115, 22, 0.85)';
       ctx.shadowBlur = 10;
-      ctx.shadowColor = 'rgba(75, 240, 226, 0.6)';
+      ctx.shadowColor = 'rgba(249, 115, 22, 0.6)';
       ctx.fill();
       ctx.shadowBlur = 0;
     }

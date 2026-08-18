@@ -3,7 +3,7 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette */
+  /* Color Palette - Electric Orange Theme System */
   --bg-pitch: #060709;
   --bg-main: #0a0c10;
   --bg-card: #11141c;
@@ -13,22 +13,22 @@
   
   --border-subtle: rgba(255, 255, 255, 0.07);
   --border-hover: rgba(255, 255, 255, 0.18);
-  --border-cyan: rgba(75, 240, 226, 0.4);
-  --border-purple: rgba(192, 132, 252, 0.4);
+  --border-cyan: rgba(249, 115, 22, 0.45);
+  --border-purple: rgba(251, 146, 60, 0.45);
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-dim: #64748b;
   
-  --cyan-primary: #4bf0e2;
-  --cyan-bright: #67e8f9;
-  --cyan-glow: rgba(75, 240, 226, 0.25);
+  --cyan-primary: #f97316;
+  --cyan-bright: #fb923c;
+  --cyan-glow: rgba(249, 115, 22, 0.35);
   
-  --purple-primary: #c084fc;
-  --purple-glow: rgba(192, 132, 252, 0.25);
+  --purple-primary: #ff8c00;
+  --purple-glow: rgba(255, 140, 0, 0.3);
   
-  --green-primary: #4ade80;
-  --green-glow: rgba(74, 222, 128, 0.25);
+  --green-primary: #f59e0b;
+  --green-glow: rgba(245, 158, 11, 0.3);
 
   /* Fonts */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -408,12 +408,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   line-height: 0.92;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #67e8f9 35%, #c084fc 70%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fb923c 35%, #f97316 70%, #ffffff 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine-text 6s linear infinite;
-  filter: drop-shadow(0 0 40px rgba(75, 240, 226, 0.35));
+  filter: drop-shadow(0 0 40px rgba(249, 115, 22, 0.45));
 }
 
 @keyframes shine-text {
@@ -1529,7 +1529,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 700;
-  color: #4ade80;
+  color: #f97316;
   letter-spacing: 0.12em;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -1549,7 +1549,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-mono);
   font-size: 0.92rem;
   font-weight: 700;
-  color: #4ade80;
+  color: #fb923c;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
@@ -1575,21 +1575,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cv-contact-item a {
-  color: #4ade80;
+  color: #f97316;
   text-decoration: none;
   font-weight: 600;
   transition: color var(--transition-fast);
 }
 
 .cv-contact-item a:hover {
-  color: #67e8f9;
+  color: #fb923c;
   text-decoration: underline;
 }
 
 .cv-contact-item i {
   width: 14px;
   height: 14px;
-  color: #4ade80;
+  color: #f97316;
 }
 
 /* Resume Section Headers */
@@ -1603,10 +1603,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.cv-title-green { color: #4ade80; }
-.cv-title-cyan { color: #67e8f9; }
-.cv-title-pink { color: #f43f5e; }
-.cv-title-purple { color: #c084fc; }
+.cv-title-green { color: #f97316; }
+.cv-title-cyan { color: #fb923c; }
+.cv-title-pink { color: #ff6b00; }
+.cv-title-purple { color: #fed7aa; }
 
 .cv-text {
   color: var(--text-secondary);
@@ -1614,7 +1614,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* Color-coded Skill Pills (matching reference screenshot) */
+/* Color-coded Skill Pills (Orange Theme) */
 .cv-skills-group {
   display: flex;
   flex-wrap: wrap;
@@ -1639,33 +1639,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pill-red {
-  background: rgba(244, 63, 94, 0.12);
-  border: 1px solid rgba(244, 63, 94, 0.4);
-  color: #fb7185;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  color: #ff8c00;
 }
 
 .pill-cyan {
-  background: rgba(103, 232, 249, 0.12);
-  border: 1px solid rgba(103, 232, 249, 0.4);
-  color: #67e8f9;
+  background: rgba(251, 146, 60, 0.15);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  color: #fb923c;
 }
 
 .pill-green {
-  background: rgba(74, 222, 128, 0.12);
-  border: 1px solid rgba(74, 222, 128, 0.4);
-  color: #4ade80;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #f59e0b;
 }
 
 .pill-purple {
-  background: rgba(192, 132, 252, 0.12);
-  border: 1px solid rgba(192, 132, 252, 0.4);
-  color: #c084fc;
+  background: rgba(234, 88, 12, 0.15);
+  border: 1px solid rgba(234, 88, 12, 0.45);
+  color: #ea580c;
 }
 
 .pill-yellow {
-  background: rgba(251, 191, 36, 0.12);
-  border: 1px solid rgba(251, 191, 36, 0.4);
-  color: #fbbf24;
+  background: rgba(254, 215, 170, 0.15);
+  border: 1px solid rgba(254, 215, 170, 0.45);
+  color: #fed7aa;
 }
 
 /* Resume Projects List */
@@ -1696,7 +1696,7 @@ h1, h2, h3, h4, h5, h6 {
 .cv-project-github {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: #4ade80;
+  color: #f97316;
   text-decoration: none;
   font-weight: 600;
 }
@@ -1708,7 +1708,7 @@ h1, h2, h3, h4, h5, h6 {
 .cv-project-tech {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: #67e8f9;
+  color: #fb923c;
   margin-bottom: 10px;
 }
 

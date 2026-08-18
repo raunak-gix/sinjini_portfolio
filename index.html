@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sinjini, Senior Data Architect and Business Intelligence Analyst specializing in enterprise data pipelines, statistical modeling, advanced SQL, Python, and BI dashboards.">
+  <title>SINJINI — Senior Data Architect & BI Analyst</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Particle & Grid Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" id="logo">
+        <span class="logo-text"><span class="logo-name-accent">SINJINI</span> <span class="slash">//</span> <span class="logo-sub-text">DATA ARCHITECT</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#arsenal" class="nav-link">Tech Stack</a>
+        <a href="#deployments" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-outline btn-resume" id="btn-resume" onclick="openResumeModal()">Resume</button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section (Clean Organized 2-Column Layout) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Left Column: Executive Bio & CTA -->
+        <div class="hero-content">
+          <div class="status-badge" id="status-pill">
+            <span class="status-dot"></span>
+            <span class="status-text">SENIOR DATA ARCHITECT & BI ANALYST</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-name-big">SINJINI</span>
+            <span class="hero-tagline">Extracting Truth from Complexity</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Specializing in enterprise data architecture, automated high-volume ETL pipelines, statistical modeling, and executive business intelligence dashboards.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" id="btn-view-models">
+              Explore Projects <i data-lucide="arrow-right"></i>
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              Contact Me <i data-lucide="mail"></i>
+            </a>
+            <button class="btn btn-outline btn-resume" id="btn-resume-hero" onclick="openResumeModal()">
+              Resume <i data-lucide="file-text"></i>
+            </button>
+          </div>
+
+          <div class="hero-tech-chips">
+            <span class="chip-item"><i data-lucide="database"></i> BigData & SQL</span>
+            <span class="chip-item"><i data-lucide="bar-chart-3"></i> Executive BI</span>
+            <span class="chip-item"><i data-lucide="cpu"></i> Data Pipelines</span>
+            <span class="chip-item"><i data-lucide="code-2"></i> Python & Spark</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Clean Organized Visual Card -->
+        <div class="hero-visual">
+          <div class="hero-visual-card-wrapper">
+            <div class="visual-aura-glow"></div>
+
+            <div class="hero-visual-card">
+              <!-- Corner Brackets -->
+              <div class="corner-bracket bracket-tl"></div>
+              <div class="corner-bracket bracket-tr"></div>
+              <div class="corner-bracket bracket-bl"></div>
+              <div class="corner-bracket bracket-br"></div>
+
+              <!-- Top Photo Area -->
+              <div class="card-portrait-box">
+                <img src="assets/portrait.jpg" alt="Sinjini - Senior Data Architect" class="portrait-img" id="hero-img">
+                <div class="scanline"></div>
+                <div class="portrait-gradient-overlay"></div>
+                
+                <div class="live-pill-tag">
+                  <span class="status-dot"></span> PIPELINES ONLINE
+                </div>
+              </div>
+
+              <!-- Bottom Stats Deck -->
+              <div class="card-stats-deck">
+                <div class="deck-stat">
+                  <span class="stat-value" id="accuracy-counter">99.4%</span>
+                  <span class="stat-title">Accuracy</span>
+                </div>
+                <div class="deck-divider"></div>
+                <div class="deck-stat">
+                  <span class="stat-value" id="data-counter">2.4TB</span>
+                  <span class="stat-title">Daily Volume</span>
+                </div>
+                <div class="deck-divider"></div>
+                <div class="deck-stat">
+                  <span class="stat-value">50+</span>
+                  <span class="stat-title">Dashboards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">About Me</h2>
+          <div class="section-accent-line"></div>
+        </div>
+        
+        <!-- Bio Lead Box -->
+        <div class="about-hero-card">
+          <p class="about-lead">
+            I am a <strong>Senior Data Architect & BI Analyst</strong> dedicated to transforming complex, high-volume datasets into automated, reliable pipelines and high-fidelity executive dashboards. I bridge the gap between complex data infrastructure and high-stakes strategic business decisions.
+          </p>
+        </div>
+
+        <!-- 3 Modern Feature Cards -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="card-header-row">
+              <div class="feature-icon icon-cyan">
+                <i data-lucide="database"></i>
+              </div>
+              <span class="card-mini-tag">PIPELINES & SQL</span>
+            </div>
+            <h3 class="feature-title">Data Architecture</h3>
+            <p class="feature-sub">Building scalable, sub-second ETL/ELT pipelines and resilient cloud data warehouses with SQL, Python, & Snowflake.</p>
+            <div class="card-footer-pills">
+              <span class="mini-pill">Snowflake</span>
+              <span class="mini-pill">BigQuery</span>
+              <span class="mini-pill">Python</span>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-header-row">
+              <div class="feature-icon icon-purple">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+              <span class="card-mini-tag">TELEMETRY & BI</span>
+            </div>
+            <h3 class="feature-title">BI & Analytics</h3>
+            <p class="feature-sub">Designing intuitive, real-time executive dashboards in Tableau & PowerBI for deep operational visibility and active forecasting.</p>
+            <div class="card-footer-pills">
+              <span class="mini-pill">Tableau</span>
+              <span class="mini-pill">PowerBI</span>
+              <span class="mini-pill">Looker</span>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-header-row">
+              <div class="feature-icon icon-emerald">
+                <i data-lucide="target"></i>
+              </div>
+              <span class="card-mini-tag">GROWTH & ROI</span>
+            </div>
+            <h3 class="feature-title">Business Impact</h3>
+            <p class="feature-sub">Aligning technical data modeling directly with business ROI, data quality governance, and executive decision-making.</p>
+            <div class="card-footer-pills">
+              <span class="mini-pill">Governance</span>
+              <span class="mini-pill">SLAs</span>
+              <span class="mini-pill">Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Stats Ribbon -->
+        <div class="stats-ribbon">
+          <div class="ribbon-item">
+            <span class="ribbon-num text-gradient">5+</span>
+            <span class="ribbon-text">Years Experience</span>
+          </div>
+          <div class="ribbon-divider"></div>
+          <div class="ribbon-item">
+            <span class="ribbon-num text-gradient">50+</span>
+            <span class="ribbon-text">Pipelines Built</span>
+          </div>
+          <div class="ribbon-divider"></div>
+          <div class="ribbon-item">
+            <span class="ribbon-num text-gradient">99.9%</span>
+            <span class="ribbon-text">Data Accuracy</span>
+          </div>
+          <div class="ribbon-divider"></div>
+          <div class="ribbon-item">
+            <span class="ribbon-num text-gradient">2.4TB+</span>
+            <span class="ribbon-text">Data Managed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Arsenal Section -->
+    <section class="arsenal-section section-padding" id="arsenal">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">Technical Arsenal</h2>
+          <div class="section-accent-line"></div>
+        </div>
+
+        <div class="arsenal-grid">
+          <!-- Card 1: Advanced SQL & Snowflake -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="database"></i>
+              </div>
+              <span class="card-badge badge-core">CORE</span>
+            </div>
+            <h3 class="arsenal-card-title">Advanced SQL & Snowflake</h3>
+            <p class="arsenal-card-desc">
+              Complex query optimization, window functions, CTEs, and petabyte-scale cloud data warehousing.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">PostgreSQL, BigQuery, Snowflake</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Python & Automation -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="code-2"></i>
+              </div>
+            </div>
+            <h3 class="arsenal-card-title">Python & Automation</h3>
+            <p class="arsenal-card-desc">
+              Pandas, NumPy, Scikit-learn. Data pipeline automation, scipy, and Airflow DAG orchestration.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">ETL Pipelines, PySpark, Airflow</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Power BI & DAX -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="pie-chart"></i>
+              </div>
+              <span class="card-badge badge-bi">BI</span>
+            </div>
+            <h3 class="arsenal-card-title">Power BI & DAX</h3>
+            <p class="arsenal-card-desc">
+              Custom DAX measures, complex data modeling, star schemas, and automated executive reporting.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">Power BI, DAX, Power Query</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Tableau & Visualization -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+              <span class="card-badge badge-core">CORE</span>
+            </div>
+            <h3 class="arsenal-card-title">Tableau & Visualization</h3>
+            <p class="arsenal-card-desc">
+              Interactive high-fidelity dashboards, real-time telemetry, spatial maps, and executive KPI views.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">Tableau, Data Visualization, KPIs</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Cloud & AWS -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="cloud"></i>
+              </div>
+              <span class="card-badge badge-cloud">CLOUD</span>
+            </div>
+            <h3 class="arsenal-card-title">AWS & Cloud Infra</h3>
+            <p class="arsenal-card-desc">
+              Cloud architecture, S3 data lakes, Glue ETL pipelines, Redshift warehousing, and IAM controls.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">AWS S3, Redshift, Glue, Athena</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Excel & Financial Analysis -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="file-spreadsheet"></i>
+              </div>
+            </div>
+            <h3 class="arsenal-card-title">Excel & Financial Modeling</h3>
+            <p class="arsenal-card-desc">
+              Advanced financial modeling, Power Pivot, dynamic array formulas, VBA automation, and scenario analysis.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">Excel, Power Pivot, VBA</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Git & Version Control -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="git-branch"></i>
+              </div>
+            </div>
+            <h3 class="arsenal-card-title">Git & Version Control</h3>
+            <p class="arsenal-card-desc">
+              Source code management, CI/CD integration, dbt model versioning, and collaborative branching workflows.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">Git, GitHub, CI/CD, dbt</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Machine Learning -->
+          <div class="arsenal-card">
+            <div class="arsenal-card-header">
+              <div class="arsenal-icon-box">
+                <i data-lucide="cpu"></i>
+              </div>
+              <span class="card-badge badge-advanced">ADVANCED</span>
+            </div>
+            <h3 class="arsenal-card-title">Machine Learning</h3>
+            <p class="arsenal-card-desc">
+              Predictive modeling, clustering, and regression analysis. Translating algorithms into business logic.
+            </p>
+            <div class="arsenal-card-foot">
+              <p class="arsenal-subtext">Random Forests, XGBoost, K-Means</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployments Section -->
+    <section class="deployments-section section-padding" id="deployments">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">Deployments</h2>
+          <div class="section-accent-line"></div>
+        </div>
+
+        <div class="deployments-grid">
+          <!-- Card 1 -->
+          <div class="project-card" data-project="financial">
+            <div class="project-img-container">
+              <img src="assets/chart_financial.jpg" alt="Financial Forecasting Graphic" class="project-img">
+              <div class="project-img-overlay overlay-cyan"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Prophet</span>
+              </div>
+              <h3 class="project-title">Financial Forecasting</h3>
+              <p class="project-desc">
+                Engineered a time-series forecasting model that reduced quarterly revenue variance by 14%, utilizing historical transactional data and market indicators.
+              </p>
+              <button class="project-link btn-link-cyan" onclick="openProjectModal('financial')">
+                VIEW KERNEL <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card" data-project="user-behavior">
+            <div class="project-img-container">
+              <img src="assets/chart_user_behavior.jpg" alt="User Behavior Analysis Graphic" class="project-img">
+              <div class="project-img-overlay overlay-purple"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Tableau</span>
+              </div>
+              <h3 class="project-title">User Behavior Analysis</h3>
+              <p class="project-desc">
+                Segmented 500k+ active users using K-Means clustering, identifying a high-LTV segment that drove a 22% increase in targeted campaign ROI.
+              </p>
+              <button class="project-link btn-link-purple" onclick="openProjectModal('user-behavior')">
+                VIEW DASHBOARD <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card" data-project="supply-chain">
+            <div class="project-img-container">
+              <img src="assets/chart_supply_chain.jpg" alt="Supply Chain Optimization Graphic" class="project-img">
+              <div class="project-img-overlay overlay-green"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">BigQuery</span>
+                <span class="tag">dbt</span>
+              </div>
+              <h3 class="project-title">Supply Chain Optimization</h3>
+              <p class="project-desc">
+                Architected a real-time data pipeline consolidating global inventory metrics, reducing reporting latency from 24 hours to 15 minutes.
+              </p>
+              <button class="project-link btn-link-green" onclick="openProjectModal('supply-chain')">
+                VIEW REPORT <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get in Touch Section -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">Get in Touch</h2>
+          <div class="section-accent-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Info Card -->
+          <div class="contact-info">
+            <div>
+              <div class="card-top-tag">
+                <span class="badge-dot badge-dot-cyan"></span>
+                <span>// DIRECT CHANNELS</span>
+              </div>
+              
+              <h3 class="contact-card-title">Let's Connect</h3>
+              <p class="contact-lead">
+                Ready to architect your data future? Reach out for collaborations, consulting, or enterprise pipeline engineering.
+              </p>
+            </div>
+
+            <div class="info-list">
+              <!-- Email Card -->
+              <div class="info-item info-item-cyan" id="email-copy-btn" title="Click to copy email address">
+                <div class="info-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="info-text">
+                  <span class="info-label">Email</span>
+                  <span class="info-value email-value">sinjini@data-architect.io</span>
+                </div>
+                <span class="copy-hint"><i data-lucide="copy"></i></span>
+              </div>
+
+              <!-- Location Card -->
+              <div class="info-item info-item-purple">
+                <div class="info-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="info-text">
+                  <span class="info-label">Location</span>
+                  <span class="info-value">San Francisco, CA / Remote</span>
+                </div>
+              </div>
+
+              <!-- Social Card -->
+              <div class="info-item info-item-green">
+                <div class="info-icon">
+                  <i data-lucide="share-2"></i>
+                </div>
+                <div class="info-text">
+                  <span class="info-label">Social</span>
+                  <span class="info-value">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a> · 
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Card -->
+          <div class="contact-form-wrapper">
+            <div class="card-top-tag">
+              <span class="badge-dot badge-dot-purple"></span>
+              <span>// TRANSMISSION FORM</span>
+            </div>
+            
+            <h3 class="contact-card-title">Send a Message</h3>
+
+            <form id="contact-form" class="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="name" class="form-label"><span class="label-code">// 01</span> Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label"><span class="label-code">// 02</span> Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label"><span class="label-code">// 03</span> Project Details / Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Briefly describe your project or data needs..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full" id="btn-submit">
+                SEND TRANSMISSION <i data-lucide="arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <a href="#" class="brand-logo footer-logo">
+        <span class="logo-text"><span class="logo-name-accent">SINJINI</span> <span class="slash">//</span> <span class="logo-sub-text">DATA ARCHITECT</span></span>
+      </a>
+
+      <div class="footer-links">
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://tableau.com" target="_blank" rel="noopener noreferrer" class="footer-link">Tableau</a>
+        <a href="mailto:hello@data-architect.io" class="footer-link">Email</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 SINJINI. BUILT WITH PRECISION.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal Component -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card" id="modal-card">
+      <button class="modal-close" id="modal-close" onclick="closeModal()">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- Content dynamically injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+  <script>
+    // Initialize Lucide icons safely
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

@@ -16,6 +16,59 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Global Modal Launcher -->
+  <script>
+    function openResumeModal() {
+      try {
+        let overlay = document.getElementById('modal-overlay');
+        let body = document.getElementById('modal-body');
+
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.className = 'modal-overlay';
+          overlay.id = 'modal-overlay';
+          overlay.innerHTML = '<div class="modal-card" id="modal-card"><button class="modal-close" id="modal-close" onclick="closeModal()">✕</button><div class="modal-body" id="modal-body"></div></div>';
+          document.body.appendChild(overlay);
+          body = document.getElementById('modal-body');
+        }
+
+        if (body && typeof getResumeHTML === 'function') {
+          body.innerHTML = getResumeHTML();
+        } else if (body && typeof window.resumeHTMLString !== 'undefined') {
+          body.innerHTML = window.resumeHTMLString;
+        }
+
+        overlay.classList.add('active');
+        overlay.style.setProperty('display', 'flex', 'important');
+        overlay.style.setProperty('opacity', '1', 'important');
+        overlay.style.setProperty('pointer-events', 'auto', 'important');
+        overlay.style.setProperty('visibility', 'visible', 'important');
+        overlay.style.setProperty('z-index', '999999', 'important');
+
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+          lucide.createIcons();
+        }
+      } catch (e) {
+        console.error('Error opening resume modal:', e);
+      }
+    }
+
+    function closeModal() {
+      try {
+        const overlay = document.getElementById('modal-overlay');
+        if (overlay) {
+          overlay.classList.remove('active');
+          overlay.style.setProperty('display', 'none', 'important');
+          overlay.style.setProperty('opacity', '0', 'important');
+          overlay.style.setProperty('pointer-events', 'none', 'important');
+          overlay.style.setProperty('visibility', 'hidden', 'important');
+        }
+      } catch (e) {
+        console.error('Error closing modal:', e);
+      }
+    }
+  </script>
 </head>
 <body>
   <!-- Ambient Particle & Grid Canvas -->
